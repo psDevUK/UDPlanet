@@ -1,0 +1,15 @@
+import React from 'react';
+import NumberFormat from 'react-number-format';
+
+class UDNumberMask extends React.Component {
+  render() {
+    return (
+      <NumberFormat format={this.props.format}
+        mask={this.props.mask}
+        placeholder={this.props.placeholder}
+      />
+    )
+  }
+}
+
+export default UDNumberMask
