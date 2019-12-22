@@ -25,12 +25,11 @@ class UDNumberMask extends React.Component {
 
   onIncomingEvent(eventName, event) {
     if (event.type === "requestState") {
-      var data = {
+      UniversalDashboard.post(`/api/internal/component/element/sessionState/${event.requestId}`, {
         attributes: {
           value: this.state.value
         }
-      }
-      UniversalDashboard.post('/api/internal/component/element/sessionState/${event.requestId}', data);
+      });
     }
     else if (event.type === "setState") {
       this.setState(event.state.attributes);
